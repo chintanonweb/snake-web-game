@@ -188,25 +188,25 @@ document.body.addEventListener("keydown", keyDown);
 
 function keyDown(event) {
   if (event.keyCode == 38 || event.keyCode == 87) { // Up or W
-    if (inputsYVelocity == 1) return;
+    if (yVelocity == 1) return;
     inputsYVelocity = -1;
     inputsXVelocity = 0;
   }
 
   if (event.keyCode == 40 || event.keyCode == 83) { // Down or S
-    if (inputsYVelocity == -1) return;
+    if (yVelocity == -1) return;
     inputsYVelocity = 1;
     inputsXVelocity = 0;
   }
 
   if (event.keyCode == 37 || event.keyCode == 65) { // Left or A
-    if (inputsXVelocity == 1) return;
+    if (xVelocity == 1) return;
     inputsYVelocity = 0;
     inputsXVelocity = -1;
   }
 
   if (event.keyCode == 39 || event.keyCode == 68) { // Right or D
-    if (inputsXVelocity == -1) return;
+    if (xVelocity == -1) return;
     inputsYVelocity = 0;
     inputsXVelocity = 1;
   }
@@ -253,24 +253,24 @@ canvas.addEventListener("touchmove", function(e) {
   if (Math.abs(dx) > Math.abs(dy)) {
     if (dx > 0) {
       // Swipe left
-      if (inputsXVelocity == 1) return;
+      if (xVelocity == 1) return;
       inputsYVelocity = 0;
       inputsXVelocity = -1;
     } else {
       // Swipe right
-      if (inputsXVelocity == -1) return;
+      if (xVelocity == -1) return;
       inputsYVelocity = 0;
       inputsXVelocity = 1;
     }
   } else {
     if (dy > 0) {
       // Swipe up
-      if (inputsYVelocity == 1) return;
+      if (yVelocity == 1) return;
       inputsYVelocity = -1;
       inputsXVelocity = 0;
     } else {
       // Swipe down
-      if (inputsYVelocity == -1) return;
+      if (yVelocity == -1) return;
       inputsYVelocity = 1;
       inputsXVelocity = 0;
     }
